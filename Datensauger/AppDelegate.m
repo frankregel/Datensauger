@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
 
 @implementation AppDelegate
 
@@ -16,6 +17,10 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    //Mache den MainViewController zum HautView
+    MainViewController *mainViewController = [MainViewController new];
+    //Setze ihn als root, damit ist er auch schon geadded
+    self.window.rootViewController = mainViewController;
     return YES;
 }
 

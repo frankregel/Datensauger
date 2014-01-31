@@ -19,6 +19,12 @@
 		77919E45189C19030016A980 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77919E2D189C19030016A980 /* UIKit.framework */; };
 		77919E4D189C19030016A980 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77919E4B189C19030016A980 /* InfoPlist.strings */; };
 		77919E4F189C19030016A980 /* DatensaugerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 77919E4E189C19030016A980 /* DatensaugerTests.m */; };
+		77919E5C189C19C70016A980 /* DataSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77919E5B189C19C70016A980 /* DataSourceModel.m */; };
+		77919E64189C19E40016A980 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77919E5F189C19E40016A980 /* MainViewController.m */; };
+		77919E65189C19E40016A980 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77919E61189C19E40016A980 /* PickerViewController.m */; };
+		77919E66189C19E40016A980 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77919E63189C19E40016A980 /* TableViewController.m */; };
+		77919E68189C1A000016A980 /* jaegerWW2_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 77919E67189C1A000016A980 /* jaegerWW2_2.png */; };
+		77919E6A189C1C6B0016A980 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 77919E69189C1C6B0016A980 /* test.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,17 @@
 		77919E4A189C19030016A980 /* DatensaugerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DatensaugerTests-Info.plist"; sourceTree = "<group>"; };
 		77919E4C189C19030016A980 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		77919E4E189C19030016A980 /* DatensaugerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatensaugerTests.m; sourceTree = "<group>"; };
+		77919E58189C19AF0016A980 /* GraphicsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsProtocol.h; sourceTree = "<group>"; };
+		77919E5A189C19C70016A980 /* DataSourceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceModel.h; sourceTree = "<group>"; };
+		77919E5B189C19C70016A980 /* DataSourceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceModel.m; sourceTree = "<group>"; };
+		77919E5E189C19E40016A980 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		77919E5F189C19E40016A980 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		77919E60189C19E40016A980 /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		77919E61189C19E40016A980 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		77919E62189C19E40016A980 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		77919E63189C19E40016A980 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		77919E67189C1A000016A980 /* jaegerWW2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jaegerWW2_2.png; sourceTree = "<group>"; };
+		77919E69189C1C6B0016A980 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +124,13 @@
 		77919E2F189C19030016A980 /* Datensauger */ = {
 			isa = PBXGroup;
 			children = (
-				77919E38189C19030016A980 /* AppDelegate.h */,
+				77919E59189C19C70016A980 /* Model */,
+				77919E5D189C19E40016A980 /* ViewController */,
 				77919E39189C19030016A980 /* AppDelegate.m */,
+				77919E38189C19030016A980 /* AppDelegate.h */,
+				77919E58189C19AF0016A980 /* GraphicsProtocol.h */,
+				77919E67189C1A000016A980 /* jaegerWW2_2.png */,
+				77919E69189C1C6B0016A980 /* test.png */,
 				77919E3B189C19030016A980 /* Images.xcassets */,
 				77919E30189C19030016A980 /* Supporting Files */,
 			);
@@ -142,6 +164,28 @@
 				77919E4B189C19030016A980 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		77919E59189C19C70016A980 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77919E5A189C19C70016A980 /* DataSourceModel.h */,
+				77919E5B189C19C70016A980 /* DataSourceModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		77919E5D189C19E40016A980 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				77919E5E189C19E40016A980 /* MainViewController.h */,
+				77919E5F189C19E40016A980 /* MainViewController.m */,
+				77919E60189C19E40016A980 /* PickerViewController.h */,
+				77919E61189C19E40016A980 /* PickerViewController.m */,
+				77919E62189C19E40016A980 /* TableViewController.h */,
+				77919E63189C19E40016A980 /* TableViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +263,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77919E68189C1A000016A980 /* jaegerWW2_2.png in Resources */,
 				77919E34189C19030016A980 /* InfoPlist.strings in Resources */,
 				77919E3C189C19030016A980 /* Images.xcassets in Resources */,
+				77919E6A189C1C6B0016A980 /* test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				77919E3A189C19030016A980 /* AppDelegate.m in Sources */,
+				77919E66189C19E40016A980 /* TableViewController.m in Sources */,
 				77919E36189C19030016A980 /* main.m in Sources */,
+				77919E65189C19E40016A980 /* PickerViewController.m in Sources */,
+				77919E5C189C19C70016A980 /* DataSourceModel.m in Sources */,
+				77919E64189C19E40016A980 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
