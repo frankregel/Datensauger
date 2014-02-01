@@ -11,5 +11,6 @@
 @protocol GraphicsProtocol <NSObject>
 
 -(void)backButtonTouched:(UIViewController*)viewController;
+-(void)tableBackButtonTouched:(UITableViewController*)testTableViewController;
 
 @end

@@ -49,6 +49,7 @@
     backButton.backgroundColor = [UIColor lightGrayColor];
     [backButton addTarget:self action:@selector(backToMainScreen) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:backButton];
+   
 }
 
 -(void)backToMainScreen
@@ -109,7 +110,7 @@
 
     UIImage *tmpImage = [_mutableImageArray objectAtIndex:row];
     UIImageView *rowImage = [[UIImageView alloc]initWithImage:tmpImage];
-    rowImage.frame = CGRectMake(10, 0, 20, 60);
+    rowImage.frame = CGRectMake(10, 0, 60, 60);
     rowImage.contentMode = UIViewContentModeScaleAspectFit;//positionieren, anpassen etc.
 
     UIImage *backImage =[UIImage imageNamed:@"test.png"];

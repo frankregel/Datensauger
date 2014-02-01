@@ -11,6 +11,7 @@
 
 @interface TableViewController ()
 @property NSArray *postArray;
+@property NSMutableArray *mutableImageArray;
 @property DataSourceModel *dataSource;
 
 @end
@@ -23,34 +24,44 @@
     if (self)
     {
         self.view.backgroundColor = [UIColor whiteColor];
+        
         [self loadPostObjectsFromSource];
+        [self createBackButton];
         // Custom initialization
     }
     return self;
 }
 
-- (void)viewDidLoad
+-(void) createBackButton
 {
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIButton *backButton = [[UIButton alloc]initWithFrame:CGRectMake(130, 400, 60, 40)];
+    backButton.backgroundColor = [UIColor lightGrayColor];
+    [backButton setTitle:@"Zurück" forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backToMainScreen) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backButton];
+    [self.view bringSubviewToFront:backButton];
 }
 
-- (void)didReceiveMemoryWarning
+
+
+-(void)backToMainScreen
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (_graphicsDelegate)
+    {
+        [_graphicsDelegate tableBackButtonTouched:self];
+#warning passiert nix....
+        NSLog(@"table back touched");
+    }
 }
 
+#pragma mark - Datenquelle
 -(void) loadPostObjectsFromSource
 {
     _dataSource = [DataSourceModel new];
     _postArray = [_dataSource loadDataFromWanWith:@"http://www.dealdoktor.de/api/get_top_deals/" and:@"posts"];
+    _mutableImageArray = [_dataSource getPicsFromWanWith:@"thumbnail" inPostArray:_postArray];
 }
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -82,10 +93,8 @@
     // Configure the cell...
     NSDictionary *oneResultDict = [_postArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [oneResultDict objectForKey:@"title"];
-    
-    NSData *tmpImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[oneResultDict objectForKey:@"thumbnail"]]];
                             
-    UIImage *tmpImage = [UIImage imageWithData:tmpImageData];
+    UIImage *tmpImage = [_mutableImageArray objectAtIndex:indexPath.row];
     cell.imageView.image = tmpImage;
     return cell;
 }
@@ -102,6 +111,23 @@
                                                    cancelButtonTitle:@"OK"
                                                    otherButtonTitles: nil];
         [touchAlertView show];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

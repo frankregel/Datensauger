@@ -491,6 +491,7 @@
 				77919E54189C19030016A980 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77919E55189C19030016A980 /* Build configuration list for PBXNativeTarget "DatensaugerTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +500,7 @@
 				77919E57189C19030016A980 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

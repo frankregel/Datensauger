@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GraphicsProtocol.h"
 
 @interface TableViewController : UITableViewController
-
+@property id <GraphicsProtocol> graphicsDelegate;
 @end

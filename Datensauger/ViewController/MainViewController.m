@@ -20,7 +20,14 @@
 
 @implementation MainViewController
 
-//delegate Methode
+//delegate Methoden
+
+-(void)tableBackButtonTouched:(UITableViewController *)testTableViewController
+{
+    NSLog(@"table back touched");
+    [testTableViewController.view removeFromSuperview];
+}
+
 -(void)backButtonTouched:(UIViewController *)viewController
 {
     NSLog(@"back button touched");
@@ -28,6 +35,7 @@
     
 }
 
+#pragma mark - init
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,6 +44,7 @@
         self.view.backgroundColor = [UIColor yellowColor];
         
         _tableViewController = [TableViewController new];
+        _pickerViewController = [PickerViewController new];
         
         [self createStartButtonWithXPosition:20 andyPosition:300];
         [self createPIckerButtonWithXPosition:240 andyPosition:300];
@@ -77,8 +86,7 @@
 
 -(void) pickerButtonTouched
 {
-#warning wie bringe ich die mainview aus dem sichtbaren Bereich oder unload?
-    _pickerViewController = [PickerViewController new];
+    
     _pickerViewController.graphicsDelegate = self;
     [self.view addSubview:_pickerViewController.view];
     
