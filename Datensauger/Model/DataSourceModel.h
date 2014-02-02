@@ -11,6 +11,10 @@
 
 @interface DataSourceModel : NSObject
 
+//sharedInstance
++(DataSourceModel*) useDataMethod;
+
+//verfügbare Methoden
 -(NSArray*)loadDataFromWanWith:(NSString*)quellURL and:(NSString*)keyForObject;
 -(NSMutableArray*) getPicsFromWanWith:(NSString*)stringForKey inPostArray:(NSArray*)thumbNailArray;
 

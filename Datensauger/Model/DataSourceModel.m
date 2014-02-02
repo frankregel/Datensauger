@@ -17,6 +17,18 @@
 
 @implementation DataSourceModel
 
+#pragma mark - Shared Instance aka Singleton
++(DataSourceModel*)useDataMethod
+{
+    static DataSourceModel *_useDataMethod;
+    if (!_useDataMethod)
+    {
+        _useDataMethod = [DataSourceModel new];
+    }
+    return _useDataMethod;
+}
+
+#pragma mark - verfügbare Methoden
 -(NSArray*)loadDataFromWanWith:(NSString*)quellURL and:(NSString*)keyForObject
 {
         //URL benennen

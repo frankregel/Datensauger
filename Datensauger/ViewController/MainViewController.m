@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 Frank Regel. All rights reserved.
 //
 
+#warning schnelle Iteration, Key Value Coding, Observer Pattern, Delegation, NavBar, CALAyer, 
+
+
+
 #import "MainViewController.h"
 #import "TableViewController.h"
 #import "PickerViewController.h"
@@ -68,7 +72,7 @@
 
 -(void) startButtonTouched
 {
-    
+    _tableViewController.graphicsDelegate = self;
     [self.view addSubview:_tableViewController.view];
     
     NSLog(@"touched");

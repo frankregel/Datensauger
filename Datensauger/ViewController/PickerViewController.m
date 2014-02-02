@@ -12,7 +12,7 @@
 @interface PickerViewController () //<DataSourceDelegate>
 @property NSArray *postArray;
 @property NSMutableArray *mutableImageArray;
-@property DataSourceModel *dataSource;
+//@property DataSourceModel *dataSource;
 @property UIPickerView *picker;
 
 @end
@@ -134,10 +134,17 @@
 #pragma mark - Datenquelle
 -(void) loadPostObjectsFromSource
 {
+    
+    _postArray = [[DataSourceModel useDataMethod] loadDataFromWanWith:@"http://www.dealdoktor.de/api/get_top_deals/" and:@"posts"];
+    _mutableImageArray = [[DataSourceModel useDataMethod]getPicsFromWanWith:@"thumbnail" inPostArray:_postArray];
+    
+    /*
     _dataSource = [DataSourceModel new];
     _postArray = [_dataSource loadDataFromWanWith:@"http://www.dealdoktor.de/api/get_top_deals/" and:@"posts"];
     _mutableImageArray = [_dataSource getPicsFromWanWith:@"thumbnail" inPostArray:_postArray];
+     */
 }
+     
 
 #pragma mark - System
 - (void)viewDidLoad
